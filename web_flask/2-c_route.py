@@ -21,7 +21,7 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
     """ A simple view function that returns 'C %' """
-    text = text[1:-1].replace('_', ' ')
+    text = text.replace('_', ' ')
     return 'C %s' % text
 
 
