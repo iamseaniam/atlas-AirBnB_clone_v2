@@ -8,7 +8,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-app.route('/', '/hbnb', strict_slashes=False)
+app.route('/', strict_slashes=False)
 def hello():
     """
     A simple view function that returns 'Hello HBNB!'
