@@ -17,7 +17,7 @@ def hello():
 
 
 app.route('/hbnb', strict_slashes=False)
-def HBNB():
+def hbnb():
     """
     A simple view function that returns 'HBNB!'
     """
