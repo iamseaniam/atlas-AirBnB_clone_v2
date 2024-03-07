@@ -15,15 +15,15 @@ def hello():
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """ A simple view function that returns 'HBNB' """
+    """ A simple view function that returns 'HBNB!' """
     return 'HBNB'
 
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
-    """ A simple view function that returns 'C ' followed by the value of the text variable """
+    """ A simple view function that returns 'C %' """
     text = text.replace('_', ' ')
     return 'C %s' % text
 
 
-if __name__ == '__main__':
+if __name__ == 'Main':
     app.run(host='0.0.0.0', port=5000)
