@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 from flask import Flask
-"""documentaion"""
+"""
+This is the documentation for the module.
+"""
 app = Flask(__name__)
 
 
