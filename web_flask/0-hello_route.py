@@ -5,10 +5,9 @@ This is the documentation for the module.
 """
 app = Flask(__name__)
 
-
 @app.route('/strict_slashes=False')
-
 def hello():
+    """ meep """
     return 'Hello HBNB!'
 
 if __name__ == '__main__':
