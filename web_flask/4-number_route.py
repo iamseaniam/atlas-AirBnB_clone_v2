@@ -31,10 +31,9 @@ def textPython(text='is cool'):
     return ('Python ' + text.replace("_", " "))
 
 
-@app.route('/number/<n>', strict_slashes=False)
-def num(num):
-    num = int(num)
-    return '%d is a number' % num
+@app.route('/number/<int:n>')
+def is_number(n):
+    return f'{n} is a number'
     
 
 if __name__ == '__main__':
