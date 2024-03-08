@@ -28,7 +28,8 @@ def c(text):
 app.route('/python/<text>', strict_slashes=False)
 def python(text):
     """comment"""
-    text = 'id cool'
+    if not text:
+        text = "is cool"
     text.replace("_", " ")
     return 'Python %' % text
 
