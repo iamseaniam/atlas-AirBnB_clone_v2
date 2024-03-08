@@ -20,7 +20,7 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
-    """comment"""    
+    """comment"""
     text = text.replace("_", " ")
     return 'C %s' % text
 
@@ -29,7 +29,6 @@ def c(text):
 @app.route('/python/<text>', strict_slashes=False)
 def textPython(text='is cool'):
     return ('Python ' + text.replace("_", " "))
- 
 
 
 if __name__ == '__main__':
