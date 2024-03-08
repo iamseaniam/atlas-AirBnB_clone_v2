@@ -27,12 +27,9 @@ def c(text):
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python(text):
-    """comment"""
-    if not text:
-        text = "is cool"
-    text = text.replace("_", " ")
-    return 'Python %s' % text
+def textPython(text='is cool'):
+    return ('Python ' + text.replace("_", " "))
+ 
 
 
 if __name__ == '__main__':
