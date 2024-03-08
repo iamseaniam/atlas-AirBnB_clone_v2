@@ -31,7 +31,7 @@ def python(text):
     if not text:
         text = "is cool"
     text = text.replace("_", " ")
-    return 'Python %s' % text
+    return 'Python %' % text
 
 
 if __name__ == '__main__':
