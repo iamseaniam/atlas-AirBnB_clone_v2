@@ -27,10 +27,10 @@ def c(text):
 
 @app.route('/python/<text>', strict_slashes=False)
 def python(text):
-    """comment"""
+    """Display 'Python ', followed by the value of the text variable with underscores replaced with spaces. Default value is 'is cool'."""
     if not text:
         text = "is cool"
-    text.replace("_", " ")
+    text = text.replace("_", " ")
     return 'Python %s' % text
 
 
