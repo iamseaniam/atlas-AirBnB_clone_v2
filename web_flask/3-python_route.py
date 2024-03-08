@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello():
-    """Display 'Hello HBNB!"""
+    """comment"""
     return 'Hello HBNB!'
 
 
@@ -20,14 +20,14 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
-    """comment"""
-    text.replace("_", " ")
-    return 'C %' % text
+    """comment"""    
+    text = text.replace("_", " ")
+    return 'C %s' % text
 
 
 @app.route('/python/<text>', strict_slashes=False)
 def python(text):
-    """Display 'Python ', followed by the value of the text variable with underscores replaced with spaces. Default value is 'is cool'."""
+    """comment"""
     if not text:
         text = "is cool"
     text = text.replace("_", " ")
