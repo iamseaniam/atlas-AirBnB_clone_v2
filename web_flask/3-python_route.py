@@ -6,26 +6,26 @@ from flask import Flask
 app = Flask(__name__)
 
 
-app.route('/', strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def hello():
-    """comment"""
+    """Display 'Hello HBNB!'"""
     return 'Hello HBNB!'
 
 
-app.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """comment"""
     return 'HBNB'
 
 
-app.route('/c/<text>', strict_slashes=False)
+@app.route('/c/<text>', strict_slashes=False)
 def c(text):
     """comment"""
     text.replace("_", " ")
     return 'C %' % text
 
 
-app.route('/python/<text>', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def python(text):
     """comment"""
     if not text:
