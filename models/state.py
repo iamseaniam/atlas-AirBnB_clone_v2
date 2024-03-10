@@ -18,3 +18,14 @@ class State(BaseModel, Base):
     else:
         name = ""
         cites = []
+
+    def cities(self):
+        """Returns the list of City objects linked to the current State"""
+        from models.engine.file_storage import FileStorage
+        storage = FileStorage()
+        cities = []
+        for key, value in storage.all().items():
+            if isinstance(value, City) and value.state_id == self.id:
+                cities.append(value)
+        return cities
+    
