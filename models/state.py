@@ -18,13 +18,17 @@ class State(BaseModel, Base):
     else:
         name = ""
 
-    def cities(self):
-        """Returns the list of City objects linked to the current State"""
-        from models.engine.file_storage import FileStorage
-        storage = FileStorage()
-        cities = []
-        for key, value in storage.all().items():
-            if isinstance(value, City) and value.state_id == self.id:
-                cities.append(value)
-        return cities
-    
+    def __init__(self, *args, **kwargs):
+        """initializes state"""
+        super().__init__(*args, **kwargs)
+
+    if models.storage_t != "db":
+        @property
+        def cities(self):
+            """idk what to put here yet. remind me before tuesday"""
+            city_list = []
+            all_cities = models.storage.all(City)
+            for city in all_cities.values():
+                if city.state_id == self.id:
+                    city_list.append(city)
+            return city_list
