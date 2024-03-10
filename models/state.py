@@ -17,7 +17,6 @@ class State(BaseModel, Base):
         cities = relationship("City", backref="state")
     else:
         name = ""
-        cites = []
 
     def cities(self):
         """Returns the list of City objects linked to the current State"""
