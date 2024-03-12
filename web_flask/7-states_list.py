@@ -1,21 +1,24 @@
 #!/usr/bin/python3
-"""Script for question 7"""
-
+"""Simple Flask"""
 from flask import Flask, render_template
 from models import storage
+from models.state import State
 
 app = Flask(__name__)
 
 
-@app.teardown_appcontext
-def teardown(exception):
-    storage.close()
-
-
 @app.route('/states_list', strict_slashes=False)
 def states_list():
-    states = storage.all("State")
-    return render_template('7-states_list.html', states=states.values())
+    """Shows html of states list"""
+    states = storage.all("State").values()
+    states_sorted = sorted(states, key=lambda state: state.name)
+    return render_template('7-states_list.html', states=states_sorted)
+
+
+@app.teardown_appcontext
+def teardown_storage(exception):
+    """teardown method"""
+    storage.close()
 
 
 if __name__ == '__main__':
