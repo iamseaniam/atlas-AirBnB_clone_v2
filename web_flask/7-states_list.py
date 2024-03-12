@@ -8,12 +8,11 @@ from models.state import State
 
 app = Flask(__name__)
 
-
-@app.route('/states_list')
+@app.route('/states_list', strict_slashes=False)
 def states_list():
     states = storage.all(State).values()
     states_sorted = sorted(states, key=lambda x: x.name)
-    return render_template('7-states_list.html', states=states_sorted)
+    return render_template('states_list.html', states=states_sorted)
 
 @app.teardown_appcontext
 def teardown_db(exception=None):
